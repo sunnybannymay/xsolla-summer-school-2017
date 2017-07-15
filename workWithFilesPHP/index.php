@@ -1,15 +1,18 @@
 <?php
+//возвращает размер файла
 function Head()
 	{			
 			$file=filesize($_GET['file']);
 			print_r('<p><b>File size is:'.$file.' B');
 	}
+// возвращает содержимое файла
 function Get()
 	{
 
 			$file=file_get_contents($_GET['file']);
 			print_r('<br>File data is:   '.$file);
 	}
+//изменяет содержимое файла
 function Post()
 	{
 			if(isset($_REQUEST['Change']) && trim($_REQUEST['Change'])!="")
@@ -22,6 +25,7 @@ function Post()
 			}
 			
 	}
+//удаляет файл
 function Delete_f()
 	{	
 			if(isset($_REQUEST['delete']))
@@ -31,7 +35,7 @@ function Delete_f()
 			}
 			
 	}
-	
+//дописывает файл	
 function Patch()
 	{
 			if(isset($_REQUEST['Append'])&&trim($_REQUEST['Append'])!=""&&isset($_REQUEST['submit']))
